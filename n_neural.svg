@@ -1,0 +1,20 @@
+<!-- Save as favicon.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="32" fill="#0b0c10"/>
+  <circle cx="32" cy="32" r="28" stroke="#50C878" stroke-width="2" fill="none"/>
+  
+  <!-- Connecting neuron lines -->
+  <line x1="12" y1="12" x2="32" y2="32" stroke="#50C878" stroke-width="1.5"/>
+  <line x1="52" y1="12" x2="32" y2="32" stroke="#50C878" stroke-width="1.5"/>
+  <line x1="12" y1="52" x2="32" y2="32" stroke="#50C878" stroke-width="1.5"/>
+  <line x1="52" y1="52" x2="32" y2="32" stroke="#50C878" stroke-width="1.5"/>
+  
+  <!-- Neuron points -->
+  <circle cx="12" cy="12" r="2" fill="#50C878"/>
+  <circle cx="52" cy="12" r="2" fill="#50C878"/>
+  <circle cx="12" cy="52" r="2" fill="#50C878"/>
+  <circle cx="52" cy="52" r="2" fill="#50C878"/>
+  
+  <!-- Larger N -->
+  <text x="32" y="42" font-size="34" fill="#50C878" text-anchor="middle" font-family="Segoe UI, sans-serif" font-weight="bold">N</text>
+</svg>
