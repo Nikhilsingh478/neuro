@@ -1,0 +1,368 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Styles */
+:root {
+    --neural-glow: 0 0 20px rgba(0, 255, 209, 0.3);
+}
+
+body {
+    @apply antialiased;
+    background: radial-gradient(circle at center, #1A1A1A 0%, #0A0A0A 100%);
+}
+
+/* Loading Screen */
+.loading-screen {
+    @apply fixed inset-0 bg-cyber-black flex items-center justify-center z-50;
+    transition: opacity 0.5s ease;
+}
+
+.loading-text {
+    @apply text-cyber-accent text-2xl;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Glitch Effect */
+.glitch-text {
+    position: relative;
+    animation: glitch 1s linear infinite;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch-text::before {
+    left: 2px;
+    text-shadow: -2px 0 #ff00c1;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+    left: -2px;
+    text-shadow: -2px 0 #00fff9;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim2 5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+    0% {
+        clip: rect(31px, 9999px, 94px, 0);
+    }
+    100% {
+        clip: rect(70px, 9999px, 71px, 0);
+    }
+}
+
+@keyframes glitch-anim2 {
+    0% {
+        clip: rect(65px, 9999px, 100px, 0);
+    }
+    100% {
+        clip: rect(52px, 9999px, 74px, 0);
+    }
+}
+
+/* Typewriter Effect */
+.typewriter-text {
+    @apply overflow-hidden whitespace-nowrap;
+    border-right: 2px solid theme('colors.cyber.accent');
+    animation: typing 3.5s steps(40, end),
+               blink-caret 0.75s step-end infinite;
+    width: fit-content;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: fit-content }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: theme('colors.cyber.accent') }
+}
+
+/* CTA Button Animation */
+.cta-button {
+    @apply relative overflow-hidden;
+    transition: all 0.3s ease;
+}
+
+.cta-button::before {
+    content: '';
+    @apply absolute inset-0 bg-white opacity-0;
+    transition: opacity 0.3s ease;
+}
+
+.cta-button:hover::before {
+    @apply opacity-20;
+}
+
+/* Secondary Button Animation */
+.secondary-button {
+    @apply relative overflow-hidden;
+    transition: all 0.3s ease;
+}
+
+.secondary-button::before {
+    content: '';
+    @apply absolute inset-0 bg-cyber-accent opacity-0;
+    transition: opacity 0.3s ease;
+}
+
+.secondary-button:hover::before {
+    @apply opacity-10;
+}
+
+/* Feature Timeline */
+.feature-timeline {
+    @apply relative;
+    padding: 0 10%;
+}
+
+.feature-timeline::before {
+    content: '';
+    @apply absolute left-1/2 top-0 bottom-0 w-px bg-cyber-accent;
+    transform: translateX(-50%);
+}
+
+.feature-item {
+    @apply mb-16;
+    width: 45%;
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+    @apply bg-cyber-gray p-8 rounded-xl;
+    transform-style: preserve-3d;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 255, 209, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+    border-color: theme('colors.cyber.accent');
+    box-shadow: 0 0 30px rgba(0, 255, 209, 0.1);
+}
+
+.testimonial-card .text-4xl {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-card p {
+    @apply text-lg leading-relaxed;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-card .font-semibold {
+    @apply text-xl;
+}
+
+.testimonial-card .text-cyber-accent {
+    @apply text-sm uppercase tracking-wider;
+}
+
+/* Pricing Cards */
+.pricing-card {
+    @apply bg-cyber-gray p-8 rounded-xl relative overflow-hidden;
+    transition: transform 0.3s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+}
+
+.pricing-card::after {
+    content: '';
+    @apply absolute inset-0 bg-cyber-accent opacity-0;
+    transition: opacity 0.3s ease;
+}
+
+.pricing-card:hover::after {
+    @apply opacity-10;
+}
+
+/* Parallax Elements */
+.parallax-element {
+    @apply absolute;
+    will-change: transform;
+}
+
+/* Newsletter Form */
+.newsletter-form input {
+    @apply transition-all duration-300;
+}
+
+.newsletter-form input:focus {
+    @apply outline-none ring-2 ring-cyber-accent;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-cyber-gray;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-cyber-accent rounded-full;
+}
+
+/* Section Transitions */
+.section-transition {
+    @apply relative overflow-hidden;
+}
+
+.section-transition::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-b from-transparent to-cyber-black pointer-events-none;
+}
+
+/* Hover Effects */
+.hover-glow {
+    transition: box-shadow 0.3s ease;
+}
+
+.hover-glow:hover {
+    box-shadow: var(--neural-glow);
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .feature-timeline::before {
+        @apply left-0;
+    }
+    
+    .feature-item {
+        @apply w-full ml-0 mr-0;
+    }
+}
+
+/* Ensure content is visible */
+#hero {
+    @apply relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    @apply relative z-10;
+    opacity: 1;
+}
+
+/* Canvas positioning */
+#particles-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+#product-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+/* Remove transparent backgrounds */
+.bg-cyber-gray {
+    @apply bg-opacity-0;
+}
+
+/* Update section backgrounds */
+#features, #product-showcase, #testimonials, #pricing, #cta {
+    @apply bg-opacity-0;
+}
+
+/* Neural Network Section */
+#neural-testimonials {
+    background: radial-gradient(circle at center, rgba(0, 255, 209, 0.05) 0%, transparent 70%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+#neural-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#neural-container {
+    position: relative;
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial-overlay {
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 255, 209, 0.1);
+    box-shadow: 0 0 30px rgba(0, 255, 209, 0.1);
+    transform-origin: center;
+    z-index: 2;
+    max-width: 90%;
+    width: 500px;
+}
+
+.testimonial-overlay h3 {
+    color: theme('colors.cyber.accent');
+    margin-bottom: 0.25rem;
+}
+
+.testimonial-overlay p {
+    line-height: 1.6;
+}
+
+.testimonial-overlay .text-4xl {
+    font-size: 2.5rem;
+}
+
+/* Neural Network Animations */
+@keyframes neuralPulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+}
+
+.neural-line {
+    animation: neuralPulse 2s ease-in-out infinite;
+} 

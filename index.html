@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroPulse - The Future of Neural Interface</title>
+    <link rel="stylesheet" href="./src/styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-cyber-black text-white" data-scroll-container>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loading-text font-display">Initializing Neural Interface...</div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="h-screen relative overflow-hidden">
+        <canvas id="particles-canvas" class="absolute inset-0"></canvas>
+        <div id="product-canvas" class="absolute inset-0"></div>
+        <div class="hero-content container mx-auto px-4 h-full flex flex-col justify-center">
+            <h1 class="font-display text-6xl md:text-8xl font-bold mb-6 glitch-text" data-text="NeuroPulse">
+                <span class="text-cyber-accent">Neuro</span>Pulse
+            </h1>
+            <p class="text-2xl md:text-3xl font-light mb-8 typewriter-text">
+                Think It. Do It. NeuroPulse.
+            </p>
+            <div class="flex gap-4">
+                <button class="cta-button bg-cyber-accent text-cyber-black px-8 py-4 rounded-full text-xl font-bold hover:scale-105 transition-transform">
+                    Experience the Future
+                </button>
+                <button class="secondary-button border-2 border-cyber-accent text-cyber-accent px-8 py-4 rounded-full text-xl font-bold hover:bg-cyber-accent hover:text-cyber-black transition-all">
+                    Learn More
+                </button>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-cyber-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Feature Showcase -->
+    <section id="features" class="min-h-screen py-20 relative">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-display text-center mb-16 section-title">Revolutionary Features</h2>
+            <div class="feature-timeline">
+                <!-- Features will be added dynamically via JS -->
+            </div>
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-cyber-black pointer-events-none"></div>
+    </section>
+
+    <!-- Product Showcase -->
+    <!-- <section id="product-showcase" class="min-h-screen py-20 bg-cyber-gray relative overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="product-info">
+                    <h2 class="text-4xl font-display mb-6">Experience the Future</h2>
+                    <p class="text-xl mb-8 text-gray-300">Our neural interface technology brings your thoughts to life with unprecedented precision and speed.</p>
+                    <div class="feature-list space-y-4">
+                        <div class="feature-item flex items-center">
+                            <span class="text-cyber-accent mr-4">⚡</span>
+                            <span>Instant Neural Response</span>
+                        </div>
+                        <div class="feature-item flex items-center">
+                            <span class="text-cyber-accent mr-4">🔒</span>
+                            <span>Advanced Security Protocol</span>
+                        </div>
+                        <div class="feature-item flex items-center">
+                            <span class="text-cyber-accent mr-4">🎯</span>
+                            <span>Precision Control</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-visual relative">
+                    <div id="product-detail-canvas" class="w-full h-[500px]"></div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Neural Network Testimonials -->
+    <section id="neural-testimonials" class="min-h-screen relative overflow-hidden">
+        <canvas id="neural-canvas" class="absolute inset-0"></canvas>
+        <div class="container mx-auto px-4 relative z-10">
+            <h2 class="text-4xl font-display text-center mb-16 section-title">Testimonials</h2>
+            <div id="neural-container" class="relative h-[80vh]">
+                <!-- Testimonials will be rendered in 3D -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="py-20 relative">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-display text-center mb-16">Choose Your Plan</h2>
+            <div class="pricing-grid grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Pricing cards will be added dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta" class="py-20 bg-cyber-gray relative overflow-hidden">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-display mb-8">Ready to Transform Your Reality?</h2>
+            <p class="text-xl mb-12 max-w-2xl mx-auto">Join thousands of early adopters who are already experiencing the future of neural interface technology.</p>
+            <button class="cta-button bg-cyber-accent text-cyber-black px-12 py-6 rounded-full text-2xl font-bold hover:scale-105 transition-transform">
+                Get Started Now
+            </button>
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-cyber-black pointer-events-none"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-cyber-black py-12 relative">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="footer-brand">
+                    <h3 class="font-display text-2xl mb-4">NeuroPulse</h3>
+                    <p class="text-gray-400">The future of neural interface technology</p>
+                </div>
+                <div class="footer-links">
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="hover:text-cyber-accent transition-colors">Features</a></li>
+                        <li><a href="#pricing" class="hover:text-cyber-accent transition-colors">Pricing</a></li>
+                        <li><a href="#testimonials" class="hover:text-cyber-accent transition-colors">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4 class="text-lg font-semibold mb-4">Stay Updated</h4>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" class="w-full px-4 py-2 bg-cyber-gray rounded-lg mb-2">
+                        <button type="submit" class="w-full bg-cyber-accent text-cyber-black py-2 rounded-lg hover:bg-opacity-90 transition-colors">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="/src/js/main.js"></script>
+</body>
+</html> 
